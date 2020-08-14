@@ -3,7 +3,7 @@
 ## Available routes
 
 - '/' - home page
-  ![alt text](https://github.com/alexshtilman/cake_shop_frontend_react_rest/blob/master/screenshots/loginpage.png?raw=true)
+  ![alt text](https://raw.githubusercontent.com/alexshtilman/cake_shop_frontend_react_rest/master/screenshots/LoginPage.png)
 - '/login' - login form
 - '/register' - register form
 - '/restore' - account restoration form
