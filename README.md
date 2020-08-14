@@ -4,7 +4,6 @@
 
 - '/' - home page
 - '/login' - login form
-  ![alt text](https://raw.githubusercontent.com/alexshtilman/cake_shop_frontend_react_rest/master/screenshots/LoginPage.png)
 - '/register' - register form
 - '/restore' - account restoration form
 - '/shop' - catalog of available production
@@ -14,6 +13,10 @@
 - '/blog' - list of articles
 - '/orders' - list of users orders
 - '/calendar' - list of available date's to make an order
+
+## Screenshots
+
+![alt text](https://raw.githubusercontent.com/alexshtilman/cake_shop_frontend_react_rest/master/screenshots/LoginPage.png)
 
 ## Available Scripts
 
