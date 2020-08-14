@@ -3,8 +3,8 @@
 ## Available routes
 
 - '/' - home page
-  ![alt text](https://raw.githubusercontent.com/alexshtilman/cake_shop_frontend_react_rest/master/screenshots/LoginPage.png)
 - '/login' - login form
+  ![alt text](https://raw.githubusercontent.com/alexshtilman/cake_shop_frontend_react_rest/master/screenshots/LoginPage.png)
 - '/register' - register form
 - '/restore' - account restoration form
 - '/shop' - catalog of available production
