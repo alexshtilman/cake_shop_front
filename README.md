@@ -1,5 +1,13 @@
 # React app with semantic-ui, redux, oAuth authorization
 
+```bash
+npm install -g create-react-app
+npm init react-app cake_shop_frontend_react_rest
+cd cake_shop_frontend_react_rest
+npm install
+npm start
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
