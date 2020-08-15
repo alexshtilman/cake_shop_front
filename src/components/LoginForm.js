@@ -3,33 +3,35 @@ import {
   Button,
   Form,
   Grid,
-  Header,
-  Image,
   Message,
   Segment,
   Icon,
-  Item,
   Divider,
   Checkbox,
 } from "semantic-ui-react";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-const providers = ["twitter", "google", "facebook", "github"];
 
-const LoginForm = () => {
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+
+const LoginForm = (props) => {
+  const { t } = useTranslation();
+
   const responseGoogle = (response) => {
     console.log(response);
   };
   const responseFacebook = (response) => {
     console.log(response);
   };
-  const [emailError, setEmailError] = React.useState({});
+  /*const [emailError, setEmailError] = React.useState({});
   const checkEmail = () => {
     setEmailError({
       content: "Please enter a valid email address",
       pointing: "below",
     });
-  };
+  };*/
+
   return (
     <Grid
       textAlign="center"
@@ -37,7 +39,7 @@ const LoginForm = () => {
       verticalAlign="top"
     >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Divider horizontal> Sign in</Divider>
+        <Divider horizontal> {t("signIn")}</Divider>
 
         <Grid>
           <Grid.Row>
@@ -52,7 +54,8 @@ const LoginForm = () => {
                     fluid
                     size="large"
                   >
-                    <Icon name="facebook official" /> Sign in with Facebook
+                    <Icon name="facebook official" />
+                    {t("facebook")}
                   </Button>
                 )}
               />
@@ -70,7 +73,7 @@ const LoginForm = () => {
                     color="google plus"
                     size="large"
                   >
-                    <Icon name="google" /> Sign in with Google
+                    <Icon name="google" /> {t("google")}
                   </Button>
                 )}
                 onSuccess={responseGoogle}
@@ -80,14 +83,14 @@ const LoginForm = () => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <Divider horizontal>Or</Divider>
+        <Divider horizontal>{t("or")}</Divider>
         <Form size="large">
           <Segment stacked>
             <Form.Input
               fluid
               icon="user"
               iconPosition="left"
-              placeholder="E-mail address"
+              placeholder={t("emailAddress")}
               type="email"
               error={null}
             />
@@ -95,27 +98,27 @@ const LoginForm = () => {
               fluid
               icon="lock"
               iconPosition="left"
-              placeholder="Password"
+              placeholder={t("password")}
               type="password"
             />
             <Grid>
               <Grid.Row>
                 <Grid.Column width={16}>
                   <Button color="green" fluid size="large">
-                    Sign in
+                    {t("signIn")}
                   </Button>
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
                 <Grid.Column width={16} textAlign="left">
-                  <Checkbox label="Remember me" defaultChecked />
+                  <Checkbox label={t("rememberMe")} defaultChecked />
                 </Grid.Column>
               </Grid.Row>
             </Grid>
           </Segment>
         </Form>
         <Message>
-          Don't have account ? <a href="#">Register Now!</a>
+          {t("donHaveAccount")} <Link to="/register">{t("registerNow")}</Link>
         </Message>
       </Grid.Column>
     </Grid>

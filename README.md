@@ -7,7 +7,7 @@
 - '/register' - register form
 - '/restore' - account restoration form
 - '/shop' - catalog of available production
-- '/chart' - list of items that users wants to by
+- '/cart' - list of items that users wants to by
 - '/checkout' - confirmation of order
 - '/account' - personal info and orders history
 - '/blog' - list of articles

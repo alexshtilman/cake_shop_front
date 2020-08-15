@@ -7,17 +7,6 @@ export default class AuthJwtService {
     if (!url) throw Error("url is missing!");
     this.url = url;
   }
-  setUsers(users) {
-    Axios.get(this.url + "users")
-      .pipe(map((response) => response.data))
-      .subscribe((data) => {
-        if (!data || data.length === 0) {
-          users.forEach((user) => {
-            Axios.post(`${this.url}register`, user).subscribe();
-          });
-        }
-      });
-  }
   logIn(credentials) {
     return Axios.post(`${this.url}login`, credentials).pipe(
       mergeMap((response) => {

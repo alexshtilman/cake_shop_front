@@ -104,17 +104,6 @@ export default function HomePage() {
             </Grid.Column>
           </Grid>
         </Segment>
-        <Segment vertical>
-          <Grid columns={2}>
-            <Grid.Column>
-              &copy; 2017 Company, Inc. · <a href="#root">Privacy</a> ·{" "}
-              <a href="#root">Terms</a>
-            </Grid.Column>
-            <Grid.Column textAlign="right">
-              <a href="#root">Back to top</a>
-            </Grid.Column>
-          </Grid>
-        </Segment>
       </Container>
     </div>
   );
