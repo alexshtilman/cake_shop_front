@@ -7,7 +7,6 @@ import * as serviceWorker from "./serviceWorker";
 import combineReducers from "./store/reducers";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import "semantic-ui-css/semantic.min.css";
 const store = createStore(combineReducers);
 
 ReactDOM.render(

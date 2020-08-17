@@ -54,8 +54,7 @@ const LoginForm = (props) => {
                     fluid
                     size="large"
                   >
-                    <Icon name="facebook official" />
-                    {t("facebook")}
+                    <Icon name="facebook official" /> {t("facebook")}
                   </Button>
                 )}
               />
@@ -110,7 +109,10 @@ const LoginForm = (props) => {
                 </Grid.Column>
               </Grid.Row>
               <Grid.Row>
-                <Grid.Column width={16} textAlign="left">
+                <Grid.Column
+                  width={16}
+                  style={{ display: "flex", justifyContent: "start" }}
+                >
                   <Checkbox label={t("rememberMe")} defaultChecked />
                 </Grid.Column>
               </Grid.Row>

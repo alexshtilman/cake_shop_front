@@ -26,10 +26,7 @@ function NavigationMenu() {
     { name: t("orders"), link: "/orders" },
     { name: t("calendar"), link: "/calendar" },
   ];
-  const setLang = (lng) => {
-    setActiveLang(lng);
-    i18n.changeLanguage(lng);
-  };
+
   const handleItemClick = (e, { name }) => {
     setaActiveItem(name);
   };
@@ -39,9 +36,12 @@ function NavigationMenu() {
     });
   };
   const [activeLang, setActiveLang] = React.useState(i18n.language.slice(0, 2));
-
+  const setLang = (lng) => {
+    setActiveLang(lng);
+    i18n.changeLanguage(lng);
+  };
   return (
-    <React.Fragment>
+    <div>
       <Grid padded className="tablet computer only">
         <Container>
           <Menu pointing secondary size="huge">
@@ -84,6 +84,11 @@ function NavigationMenu() {
 
               <Dropdown text={activeLang} className="item">
                 <Dropdown.Menu>
+                  {activeLang === "he" ? null : (
+                    <Dropdown.Item as="a" onClick={() => setLang("he")}>
+                      he
+                    </Dropdown.Item>
+                  )}
                   {activeLang === "en" ? null : (
                     <Dropdown.Item as="a" onClick={() => setLang("en")}>
                       en
@@ -157,7 +162,7 @@ function NavigationMenu() {
           </Menu>
         </Menu>
       </Grid>
-    </React.Fragment>
+    </div>
   );
 }
 export default NavigationMenu;

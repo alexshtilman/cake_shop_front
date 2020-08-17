@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "semantic-ui-react";
+import { useTranslation } from "react-i18next";
 
 import NavigationMenu from "./components/NavigationMenu";
 import HomePage from "./components/HomePage";
@@ -25,6 +26,8 @@ import Shop from "./components/Shop";
 
 const App = () => {
   const isLogged = true;
+  const { i18n } = useTranslation();
+  document.body.dir = i18n.dir();
   return (
     <Container>
       <Router>
@@ -98,6 +101,13 @@ const App = () => {
             exact
             render={() => {
               return isLogged ? <Shop /> : <LoginForm />;
+            }}
+          />
+          <Route
+            path={"/login"}
+            exact
+            render={() => {
+              return <LoginForm />;
             }}
           />
         </Switch>
