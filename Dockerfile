@@ -1,11 +1,11 @@
-FROM node:alpine AS builder
+FROM node:alpine3.11 AS builder
 WORKDIR /app
 COPY . .
 RUN npm install react-scripts -g --silent
 RUN yarn install
 RUN yarn run build
 
-FROM node:alpine
+FROM node:alpine3.11
 RUN yarn global add serve
 WORKDIR /app
 COPY --from=builder /app/build .

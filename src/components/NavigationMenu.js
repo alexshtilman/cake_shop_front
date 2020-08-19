@@ -6,6 +6,7 @@ import {
   Icon,
   Dropdown,
   Button,
+  Flag,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -82,21 +83,37 @@ function NavigationMenu() {
                 </Menu.Item>
               </Link>
 
-              <Dropdown text={activeLang} className="item">
+              <Dropdown
+                text={
+                  <React.Fragment>
+                    <Flag
+                      name={
+                        activeLang === "en"
+                          ? "us"
+                          : activeLang === "he"
+                          ? "il"
+                          : "ru"
+                      }
+                    />{" "}
+                    {activeLang}{" "}
+                  </React.Fragment>
+                }
+                className="item"
+              >
                 <Dropdown.Menu>
                   {activeLang === "he" ? null : (
                     <Dropdown.Item as="a" onClick={() => setLang("he")}>
-                      he
+                      <Flag name="il" /> עברית
                     </Dropdown.Item>
                   )}
                   {activeLang === "en" ? null : (
                     <Dropdown.Item as="a" onClick={() => setLang("en")}>
-                      en
+                      <Flag name="us" /> English
                     </Dropdown.Item>
                   )}
                   {activeLang === "ru" ? null : (
                     <Dropdown.Item as="a" onClick={() => setLang("ru")}>
-                      ru
+                      <Flag name="ru" /> Русский
                     </Dropdown.Item>
                   )}
                 </Dropdown.Menu>
