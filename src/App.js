@@ -24,8 +24,18 @@ import RegisterForm from "./components/RegisterForm";
 import RestoreForm from "./components/RestoreForm";
 import Shop from "./components/Shop";
 
+import { actionUserData } from "./store/actions";
+import AuthJwtService from "./services/AuthJwtService";
 const App = () => {
-  const isLogged = true;
+  const authService = new AuthJwtService("http://10.0.0.8:5000");
+  const dispatch = useDispatch(); //react hook for possibility to updating global store
+  const userData = useSelector((state) => state.userData);
+  useEffect(() => {
+    authService.getUserData().subscribe((Data) => {
+      dispatch(actionUserData(Data.identity)); //update state
+    });
+  }, []);
+
   const { i18n } = useTranslation();
   document.body.dir = i18n.dir();
   return (
@@ -44,63 +54,75 @@ const App = () => {
             path={"/account"}
             exact
             render={() => {
-              return isLogged ? <Account /> : <LoginForm />;
+              return userData.user_id ? <Account /> : <Redirect to="/login" />;
             }}
           />
           <Route
             path={"/blog"}
             exact
             render={() => {
-              return isLogged ? <Blog /> : <LoginForm />;
+              return userData.user_id ? <Blog /> : <Redirect to="/login" />;
             }}
           />
           <Route
             path={"/calendar"}
             exact
             render={() => {
-              return isLogged ? <Calendar /> : <LoginForm />;
+              return userData.user_id ? <Calendar /> : <Redirect to="/login" />;
             }}
           />
           <Route
             path={"/cart"}
             exact
             render={() => {
-              return isLogged ? <Cart /> : <LoginForm />;
+              return userData.user_id ? <Cart /> : <Redirect to="/login" />;
             }}
           />
           <Route
             path={"/checkout"}
             exact
             render={() => {
-              return isLogged ? <CheckoutFrom /> : <LoginForm />;
+              return userData.user_id ? (
+                <CheckoutFrom />
+              ) : (
+                <Redirect to="/login" />
+              );
             }}
           />
           <Route
             path={"/orders"}
             exact
             render={() => {
-              return isLogged ? <Orders /> : <LoginForm />;
+              return userData.user_id ? <Orders /> : <Redirect to="/login" />;
             }}
           />
           <Route
             path={"/register"}
             exact
             render={() => {
-              return isLogged ? <RegisterForm /> : <LoginForm />;
+              return userData.user_id ? (
+                <RegisterForm />
+              ) : (
+                <Redirect to="/login" />
+              );
             }}
           />
           <Route
             path={"/restore"}
             exact
             render={() => {
-              return isLogged ? <RestoreForm /> : <LoginForm />;
+              return userData.user_id ? (
+                <RestoreForm />
+              ) : (
+                <Redirect to="/login" />
+              );
             }}
           />
           <Route
             path={"/shop"}
             exact
             render={() => {
-              return isLogged ? <Shop /> : <LoginForm />;
+              return userData.user_id ? <Shop /> : <Redirect to="/login" />;
             }}
           />
           <Route
