@@ -26,7 +26,7 @@ import Shop from "./components/Shop";
 
 import { actionUserData } from "./store/actions";
 import AuthJwtService from "./services/AuthJwtService";
-const App = () => {
+const App = (props) => {
   const authService = new AuthJwtService("http://10.0.0.8:5000");
   const dispatch = useDispatch(); //react hook for possibility to updating global store
   const userData = useSelector((state) => state.userData);
