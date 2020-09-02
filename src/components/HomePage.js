@@ -15,7 +15,12 @@ export default function HomePage() {
         <Segment vertical>
           <Grid container stackable textAlign="center" columns={3}>
             <Grid.Column>
-              <Image centered circular size="small" src="/square-image2.jpg" />
+              <Image
+                centered
+                circular
+                size="small"
+                src="static/square-image2.jpg"
+              />
               <Header as="h1">Heading</Header>
               <p>
                 Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -26,7 +31,12 @@ export default function HomePage() {
               <Button basic>View details &raquo;</Button>
             </Grid.Column>
             <Grid.Column>
-              <Image centered circular size="small" src="/square-image.jpg" />
+              <Image
+                centered
+                circular
+                size="small"
+                src="static/square-image.jpg"
+              />
               <Header as="h1">Heading</Header>
               <p>
                 Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -37,7 +47,12 @@ export default function HomePage() {
               <Button basic>View details &raquo;</Button>
             </Grid.Column>
             <Grid.Column>
-              <Image centered circular size="small" src="/square-image.jpg" />
+              <Image
+                centered
+                circular
+                size="small"
+                src="static/square-image.jpg"
+              />
               <Header as="h1">Heading</Header>
               <p>
                 Donec sed odio dui. Etiam porta sem malesuada magna mollis
@@ -64,14 +79,14 @@ export default function HomePage() {
               </p>
             </Grid.Column>
             <Grid.Column width={6}>
-              <Image src="/square-image.jpg" />
+              <Image src="static/square-image.jpg" />
             </Grid.Column>
           </Grid>
         </Segment>
         <Segment vertical>
           <Grid stackable>
             <Grid.Column width={6}>
-              <Image src="/square-image.jpg" />
+              <Image src="static/square-image.jpg" />
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as="h1">
@@ -100,7 +115,7 @@ export default function HomePage() {
               </p>
             </Grid.Column>
             <Grid.Column width={6}>
-              <Image src="/square-image.jpg" />
+              <Image src="static/square-image.jpg" />
             </Grid.Column>
           </Grid>
         </Segment>
