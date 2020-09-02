@@ -1,6 +1,12 @@
 const path = require("path");
 const autoprefixer = require("autoprefixer");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: "./index.html",
+  filename: "../templates/index.html",
+  inject: "body",
+});
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,7 +14,7 @@ module.exports = {
     path: path.join(__dirname, "../cake_shop_backend_flask_rest/static"),
     filename: "bundle.js",
     chunkFilename: "[id].js",
-    publicPath: "/",
+    publicPath: "/static",
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -38,5 +44,5 @@ module.exports = {
     historyApiFallback: true,
     contentBase: path.join(__dirname, "../cake_shop_backend_flask_rest/static"),
   },
-
+  plugins: [HtmlWebpackPluginConfig],
 };
