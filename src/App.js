@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "semantic-ui-react";
 import { useTranslation } from "react-i18next";
 
-import NavigationMenu from "./components/NavigationMenu";
+import NavigationMenu from "./components/Menu";
 import HomePage from "./components/HomePage";
 import LoginForm from "./components/LoginForm";
 
@@ -28,20 +28,22 @@ import { actionUserData } from "./store/actions";
 import AuthJwtService from "./services/AuthJwtService";
 const App = (props) => {
   const authService = new AuthJwtService("http://10.0.0.8:5000");
-  const dispatch = useDispatch(); //react hook for possibility to updating global store
+  const dispatch = useDispatch();
   const userData = useSelector((state) => state.userData);
+  const [loading, setLoading] = React.useState(true);
   useEffect(() => {
     authService.getUserData().subscribe((Data) => {
-      dispatch(actionUserData(Data.identity)); //update state
+      dispatch(actionUserData(Data.identity));
+      setLoading(false);
     });
   }, []);
 
-  const { i18n } = useTranslation();
-  document.body.dir = i18n.dir();
-  return (
+  //const { i18n } = useTranslation();
+  // document.body.dir = i18n.dir();
+  return loading ? null : (
     <Container>
       <Router>
-        <NavigationMenu />
+        <NavigationMenu userData={userData} />
         <Switch>
           <Route
             path={"/"}

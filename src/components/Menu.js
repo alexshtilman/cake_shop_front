@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Grid,
   Container,
@@ -9,12 +9,12 @@ import {
   Flag,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import i18n from "../translate/i18n";
 
 import { useTranslation } from "react-i18next";
 
-function NavigationMenu() {
+function NavigationMenu(props) {
   const [activeItem, setaActiveItem] = React.useState("home");
   const [dropdownMenuStyle, setDropdownMenuStyle] = React.useState({
     display: "none",
@@ -41,6 +41,8 @@ function NavigationMenu() {
     setActiveLang(lng);
     i18n.changeLanguage(lng);
   };
+  const userData = useSelector((state) => state.userData);
+  console.log(userData);
   return (
     <div>
       <Grid padded className="tablet computer only">
@@ -57,21 +59,22 @@ function NavigationMenu() {
                 Lupin.co.il
               </Menu.Item>
             </Link>
-            {pages.map((page, index) => {
-              return (
-                <Link to={page.link} key={`index-${index}`}>
-                  <Menu.Item
-                    active={activeItem === page.name}
-                    as="a"
-                    name={page.name}
-                    onClick={handleItemClick}
-                  >
-                    {page.name}
-                  </Menu.Item>
-                </Link>
-              );
-            })}
-
+            {userData.user_id !== ""
+              ? pages.map((page, index) => {
+                  return (
+                    <Link to={page.link} key={`index-${index}`}>
+                      <Menu.Item
+                        active={activeItem === page.name}
+                        as="a"
+                        name={page.name}
+                        onClick={handleItemClick}
+                      >
+                        {page.name}
+                      </Menu.Item>
+                    </Link>
+                  );
+                })
+              : null}
             <Menu.Menu position="right">
               <Link to="/cart">
                 <Menu.Item
