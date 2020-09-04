@@ -59,7 +59,7 @@ function NavigationMenu(props) {
                 Lupin.co.il
               </Menu.Item>
             </Link>
-            {userData.user_id !== ""
+            {userData.user_id == ""
               ? pages.map((page, index) => {
                   return (
                     <Link to={page.link} key={`index-${index}`}>
