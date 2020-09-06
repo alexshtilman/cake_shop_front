@@ -6,106 +6,96 @@ import {
   Header,
   Button,
   Image,
+  Message,
+  Card,
+  Icon,
 } from "semantic-ui-react";
 
 export default function HomePage() {
   return (
     <div>
+      <div className="home">
+        <Container>
+          <Grid stackable>
+            <Grid.Row columns={2} centered>
+              <Grid.Column width={6}>
+                <Container textAlign="justified">
+                  <Header as="h2">Header</Header>
+                  <p>
+                    Sit ea eu minim eiusmod nulla reprehenderit anim consectetur
+                    nisi consequat aliqua consectetur elit. Ea fugiat eiusmod
+                    voluptate et ea. Anim occaecat veniam dolor culpa aliquip
+                    nisi mollit cillum sit laboris mollit minim. Occaecat veniam
+                    nostrud cupidatat minim consequat laborum mollit laboris.
+                    Adipisicing in adipisicing nostrud deserunt aute. Ex ad
+                    officia labore cillum est eiusmod consectetur irure quis
+                    tempor dolor velit est et. Culpa est reprehenderit non
+                    deserunt incididunt ullamco aute exercitation mollit mollit
+                    voluptate laborum. Eiusmod magna eu esse est labore
+                    exercitation labore incididunt deserunt velit ullamco quis.
+                    Laborum ullamco enim mollit velit anim quis velit et magna
+                    pariatur veniam dolor aute. Incididunt proident Lorem id
+                    dolore incididunt. Anim aliqua occaecat est consequat ad est
+                    culpa et mollit consectetur consectetur magna duis. Dolore
+                  </p>
+
+                  <Button basic>More &raquo;</Button>
+                </Container>
+              </Grid.Column>
+              <Grid.Column width={6}>
+                <Image
+                  src="https://react.semantic-ui.com/images/wireframe/image.png"
+                  size="large"
+                  centered
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </div>
+      <div className="ornament_1">
+        <div className="ornament_2">
+          <Container centered textAlign="center">
+            <Image centered src="public/images/scroller.png" />
+          </Container>
+          <Segment vertical>
+            <Grid container stackable centered columns={2}>
+              <Grid.Column width={6}>
+                <Header as="h1" inverted>
+                  Heading
+                </Header>
+                <Container style={{ color: "white" }}>
+                  <p>
+                    66666 Donec sed odio dui2. Etiam porta sem malesuada magna
+                    mollis euismod. Nullam id dolor id nibh ultricies vehicula
+                    ut id elit. Morbi leo risus, porta ac consectetur ac,
+                    vestibulum at eros. Praesent commodo cursus magna.
+                  </p>
+                  <Button basic inverted>
+                    View details &raquo;
+                  </Button>
+                </Container>
+              </Grid.Column>
+              <Grid.Column width={6}>
+                <Card>
+                  <Card.Content header="About Amy" />
+                  <Card.Content description="text" />
+                  <Card.Content extra>
+                    <Icon name="user" />4 Friends
+                  </Card.Content>
+                </Card>
+              </Grid.Column>
+            </Grid>
+          </Segment>
+        </div>
+      </div>
       <Container>
         <Segment vertical>
-          <Grid container stackable textAlign="center" columns={3}>
-            <Grid.Column>
-              <Image
-                centered
-                circular
-                size="small"
-                src="static/square-image2.jpg"
-              />
-              <Header as="h1">Heading</Header>
-              <p>
-                66666 Donec sed odio dui2. Etiam porta sem malesuada magna
-                mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id
-                elit. Morbi leo risus, porta ac consectetur ac, vestibulum at
-                eros. Praesent commodo cursus magna.
-              </p>
-              <Button basic>View details &raquo;</Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Image
-                centered
-                circular
-                size="small"
-                src="static/square-image.jpg"
-              />
-              <Header as="h1">Heading</Header>
-              <p>
-                Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                Praesent commodo cursus magna.
-              </p>
-              <Button basic>View details &raquo;</Button>
-            </Grid.Column>
-            <Grid.Column>
-              <Image
-                centered
-                circular
-                size="small"
-                src="static/square-image.jpg"
-              />
-              <Header as="h1">Heading</Header>
-              <p>
-                Donec sed odio dui. Etiam porta sem malesuada magna mollis
-                euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                Praesent commodo cursus magna.
-              </p>
-              <Button basic>View details &raquo;</Button>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment vertical>
-          <Grid stackable>
-            <Grid.Column width={10}>
+          <Grid stackable centered>
+            <Grid.Column width={6}>
               <Header as="h1">
                 First featurette heading.{" "}
                 <span className="sub">It'll blow your mind.</span>
-              </Header>
-              <p>
-                Donec ullamcorper nulla non metus auctor fringilla. Vestibulum
-                id ligula porta felis euismod semper. Praesent commodo cursus
-                magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                ac cursus commodo.
-              </p>
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <Image src="static/square-image.jpg" />
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment vertical>
-          <Grid stackable>
-            <Grid.Column width={6}>
-              <Image src="static/square-image.jpg" />
-            </Grid.Column>
-            <Grid.Column width={10}>
-              <Header as="h1">
-                Oh yeah, <span className="sub">it's that good.</span>
-              </Header>
-              <p>
-                Donec ullamcorper nulla non metus auctor fringilla. Vestibulum
-                id ligula porta felis euismod semper. Praesent commodo cursus
-                magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                ac cursus commodo.
-              </p>
-            </Grid.Column>
-          </Grid>
-        </Segment>
-        <Segment vertical>
-          <Grid stackable>
-            <Grid.Column width={10}>
-              <Header as="h1">
-                And lastly, <span className="sub">this one.</span>
               </Header>
               <p>
                 Donec ullamcorper nulla non metus auctor fringilla. Vestibulum

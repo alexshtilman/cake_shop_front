@@ -47,10 +47,9 @@ function NavigationMenu(props) {
     <div>
       <Grid padded className="tablet computer only">
         <Container>
-          <Menu pointing secondary size="huge">
+          <Menu secondary size="huge">
             <Link to="/">
               <Menu.Item
-                header
                 as="a"
                 active={activeItem === "home"}
                 name="home"

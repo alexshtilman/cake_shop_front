@@ -42,114 +42,103 @@ const App = () => {
   // document.body.dir = i18n.dir();
   return loading ? null : (
     <React.Fragment>
-      <Container>
-        <Router>
+      <Router>
+        <Container className="nav">
           <NavigationMenu userData={userData} />
-          <div className="ornament_1">
-            <div className="ornament_2">test</div>
-          </div>
-          <Switch>
-            <Route
-              path={"/"}
-              exact
-              render={() => {
-                return <HomePage />;
-              }}
-            />
-            <Route
-              path={"/account"}
-              exact
-              render={() => {
-                return userData.user_id ? (
-                  <Account />
-                ) : (
-                  <Redirect to="/login" />
-                );
-              }}
-            />
-            <Route
-              path={"/blog"}
-              exact
-              render={() => {
-                return userData.user_id ? <Blog /> : <Redirect to="/login" />;
-              }}
-            />
-            <Route
-              path={"/calendar"}
-              exact
-              render={() => {
-                return userData.user_id ? (
-                  <Calendar />
-                ) : (
-                  <Redirect to="/login" />
-                );
-              }}
-            />
-            <Route
-              path={"/cart"}
-              exact
-              render={() => {
-                return userData.user_id ? <Cart /> : <Redirect to="/login" />;
-              }}
-            />
-            <Route
-              path={"/checkout"}
-              exact
-              render={() => {
-                return userData.user_id ? (
-                  <CheckoutFrom />
-                ) : (
-                  <Redirect to="/login" />
-                );
-              }}
-            />
-            <Route
-              path={"/orders"}
-              exact
-              render={() => {
-                return userData.user_id ? <Orders /> : <Redirect to="/login" />;
-              }}
-            />
-            <Route
-              path={"/register"}
-              exact
-              render={() => {
-                return userData.user_id ? (
-                  <RegisterForm />
-                ) : (
-                  <Redirect to="/login" />
-                );
-              }}
-            />
-            <Route
-              path={"/restore"}
-              exact
-              render={() => {
-                return userData.user_id ? (
-                  <RestoreForm />
-                ) : (
-                  <Redirect to="/login" />
-                );
-              }}
-            />
-            <Route
-              path={"/shop"}
-              exact
-              render={() => {
-                return userData.user_id ? <Shop /> : <Redirect to="/login" />;
-              }}
-            />
-            <Route
-              path={"/login"}
-              exact
-              render={() => {
-                return <LoginForm />;
-              }}
-            />
-          </Switch>
-        </Router>
-        <Footer />
-      </Container>
+        </Container>
+        <Switch>
+          <Route
+            path={"/"}
+            exact
+            render={() => {
+              return <HomePage />;
+            }}
+          />
+          <Route
+            path={"/account"}
+            exact
+            render={() => {
+              return userData.user_id ? <Account /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/blog"}
+            exact
+            render={() => {
+              return userData.user_id ? <Blog /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/calendar"}
+            exact
+            render={() => {
+              return userData.user_id ? <Calendar /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/cart"}
+            exact
+            render={() => {
+              return userData.user_id ? <Cart /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/checkout"}
+            exact
+            render={() => {
+              return userData.user_id ? (
+                <CheckoutFrom />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          />
+          <Route
+            path={"/orders"}
+            exact
+            render={() => {
+              return userData.user_id ? <Orders /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/register"}
+            exact
+            render={() => {
+              return userData.user_id ? (
+                <RegisterForm />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          />
+          <Route
+            path={"/restore"}
+            exact
+            render={() => {
+              return userData.user_id ? (
+                <RestoreForm />
+              ) : (
+                <Redirect to="/login" />
+              );
+            }}
+          />
+          <Route
+            path={"/shop"}
+            exact
+            render={() => {
+              return userData.user_id ? <Shop /> : <Redirect to="/login" />;
+            }}
+          />
+          <Route
+            path={"/login"}
+            exact
+            render={() => {
+              return <LoginForm />;
+            }}
+          />
+        </Switch>
+      </Router>
+      <Footer />
     </React.Fragment>
   );
 };

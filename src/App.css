@@ -14,3 +14,10 @@
 body {
   background: #d8cfc6 url(./images/background.png) top center repeat-y !important;
 }
+.home {
+  height: 420px;
+}
+.nav {
+  margin-top: 15px;
+  height: 190px;
+}
