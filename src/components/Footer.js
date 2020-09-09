@@ -19,6 +19,11 @@ export default function Footer() {
           </List.Item>
         </List>
       </Container>
+      <Container textAlign="center" style={{ paddingTop: "15px" }}>
+        <a href="https://www.freepik.com/vectors/background">
+          Background vector created by s.salvador - www.freepik.com
+        </a>
+      </Container>
     </Segment>
   );
 }

@@ -1,23 +1,11 @@
-.ornament_2 {
-  min-height: 483px;
-}
-.ornament_2,
-.ornament_1 footer {
-  background: url(./images/ornament_2-background.png) center -3px no-repeat;
-}
-.ornament_1 {
-  background: url(./images/ornament_1-background.png) top left repeat-x;
-  height: 483px;
-  clear: both;
-  position: relative;
-}
 body {
-  background: #d8cfc6 url(./images/background.png) top center repeat-y !important;
+  background: #d8cfc6 url(images/bg.jpg) top center no-repeat !important;
+}
+.scroller {
+  background: url(images/scroller.png) top center no-repeat !important;
+  height: 250px;
+  padding-top: 55px;
 }
 .home {
-  height: 420px;
-}
-.nav {
-  margin-top: 15px;
-  height: 190px;
+  padding-top: 40px;
 }

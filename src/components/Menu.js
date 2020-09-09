@@ -7,6 +7,7 @@ import {
   Dropdown,
   Button,
   Flag,
+  Divider,
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -44,10 +45,11 @@ function NavigationMenu(props) {
   const userData = useSelector((state) => state.userData);
   console.log(userData);
   return (
-    <div>
+    <React.Fragment>
+      <br />
       <Grid padded className="tablet computer only">
         <Container>
-          <Menu secondary size="huge">
+          <Menu secondary inverted size="huge">
             <Link to="/">
               <Menu.Item
                 as="a"
@@ -181,7 +183,7 @@ function NavigationMenu(props) {
           </Menu>
         </Menu>
       </Grid>
-    </div>
+    </React.Fragment>
   );
 }
 export default NavigationMenu;

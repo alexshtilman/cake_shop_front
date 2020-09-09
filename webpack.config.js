@@ -1,9 +1,10 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const outputObj = (mode) => {
   return {
@@ -20,12 +21,14 @@ const templateObj = (mode) => {
   let obj = {
     template: "./index.html",
     minify: { collapseWhitespace: true },
+    favicon: "./images/favicon.png",
   };
   if (mode == "production") obj["filename"] = "../templates/index.html";
   return obj;
 };
 module.exports = (env, options) => {
   console.log(`This is the Webpack 4 'mode': ${options.mode}`);
+  var devMode = options.mode == "development";
   return {
     context: path.resolve(__dirname, "src"),
     mode: options.mode,
@@ -35,6 +38,8 @@ module.exports = (env, options) => {
       extensions: [".js", ".jsx"],
     },
     optimization: {
+      minimize: true,
+      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
       runtimeChunk: {
         name: "manifest",
       },
@@ -59,7 +64,7 @@ module.exports = (env, options) => {
       rules: [
         {
           test: /\.css$/,
-          loader: "style-loader!css-loader",
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
         {
           test: /\.s[a|c]ss$/,
@@ -86,7 +91,9 @@ module.exports = (env, options) => {
     plugins: [
       new HtmlWebpackPlugin(templateObj(options.mode)),
       new CleanWebpackPlugin(),
-      new FaviconsWebpackPlugin("../public/favicon.png"),
+      new MiniCssExtractPlugin({
+        filename: devMode ? "[name].css" : "[name].[hash].css",
+      }),
     ],
     devServer: {
       port: 4200,

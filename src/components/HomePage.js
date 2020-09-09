@@ -9,6 +9,7 @@ import {
   Message,
   Card,
   Icon,
+  Label,
 } from "semantic-ui-react";
 
 export default function HomePage() {
@@ -44,51 +45,91 @@ export default function HomePage() {
               </Grid.Column>
               <Grid.Column width={6}>
                 <Image
-                  src="https://react.semantic-ui.com/images/wireframe/image.png"
-                  size="large"
+                  src="public/static/images/2018-09-28_09-09-44_UTC.jpg"
+                  size="medium"
                   centered
+                  circular
                 />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>
       </div>
-      <div className="ornament_1">
-        <div className="ornament_2">
-          <Container centered textAlign="center">
-            <Image centered src="public/images/scroller.png" />
-          </Container>
-          <Segment vertical>
-            <Grid container stackable centered columns={2}>
-              <Grid.Column width={6}>
-                <Header as="h1" inverted>
-                  Heading
-                </Header>
-                <Container style={{ color: "white" }}>
-                  <p>
-                    66666 Donec sed odio dui2. Etiam porta sem malesuada magna
-                    mollis euismod. Nullam id dolor id nibh ultricies vehicula
-                    ut id elit. Morbi leo risus, porta ac consectetur ac,
-                    vestibulum at eros. Praesent commodo cursus magna.
-                  </p>
-                  <Button basic inverted>
-                    View details &raquo;
-                  </Button>
-                </Container>
-              </Grid.Column>
-              <Grid.Column width={6}>
-                <Card>
-                  <Card.Content header="About Amy" />
-                  <Card.Content description="text" />
-                  <Card.Content extra>
-                    <Icon name="user" />4 Friends
-                  </Card.Content>
-                </Card>
-              </Grid.Column>
-            </Grid>
-          </Segment>
-        </div>
-      </div>
+
+      <Container className="scroller">
+        <Container text>
+          <Grid centered columns={5}>
+            <Grid.Column>
+              <Card raised as="a">
+                <Image src="public/static/images/2018-08-15_09-30-50_UTC.jpg" />
+                <Card.Content>
+                  <Card.Header textAlign="center">Wedding</Card.Header>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card raised as="a">
+                <Image src="public/static/images/2018-06-07_10-05-27_UTC_1.jpg" />
+                <Card.Content>
+                  <Card.Header textAlign="center">Party</Card.Header>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card raised as="a">
+                <Image src="public/static/images/2018-07-07_11-20-09_UTC.jpg" />
+                <Card.Content>
+                  <Card.Header textAlign="center">Desert</Card.Header>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card raised as="a">
+                <Image src="public/static/images/2018-07-27_08-50-00_UTC.jpg" />
+                <Card.Content>
+                  {" "}
+                  <Card.Header textAlign="center">Cupcakes</Card.Header>{" "}
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            <Grid.Column>
+              <Card raised as="a">
+                <Image src="public/static/images/2019-07-21_05-47-37_UTC.jpg" />
+                <Card.Content>
+                  {" "}
+                  <Card.Header textAlign="center">Sweets</Card.Header>
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </Container>
+      <Container>
+        <Grid container stackable centered columns={2}>
+          <Grid.Column width={6}>
+            <Header as="h1">Heading</Header>
+            <Container style={{ color: "white" }}>
+              <p>
+                66666 Donec sed odio dui2. Etiam porta sem malesuada magna
+                mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id
+                elit. Morbi leo risus, porta ac consectetur ac, vestibulum at
+                eros. Praesent commodo cursus magna.
+              </p>
+              <Button basic>View details &raquo;</Button>
+            </Container>
+          </Grid.Column>
+          <Grid.Column width={6}>
+            <Card>
+              <Card.Content header="About Amy" />
+              <Card.Content description="text" />
+              <Card.Content extra>
+                <Icon name="user" />4 Friends
+              </Card.Content>
+            </Card>
+          </Grid.Column>
+        </Grid>
+      </Container>
+
       <Container>
         <Segment vertical>
           <Grid stackable centered>
@@ -105,7 +146,7 @@ export default function HomePage() {
               </p>
             </Grid.Column>
             <Grid.Column width={6}>
-              <Image src="static/square-image.jpg" />
+              <Image src="public/static/square-image.jpg" />
             </Grid.Column>
           </Grid>
         </Segment>
