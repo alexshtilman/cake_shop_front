@@ -6,7 +6,7 @@ export default function Footer() {
     <Segment vertical style={{ padding: "5em 0em" }}>
       <Divider section />
       <Container textAlign="center">
-        <List horizontal link size="small">
+        <List horizontal link size="medium">
           <List.Item>&copy; 2020 Lupin, Inc.</List.Item>
           <List.Item>
             <Button circular color="facebook" icon="facebook" />
@@ -18,11 +18,6 @@ export default function Footer() {
             About
           </List.Item>
         </List>
-      </Container>
-      <Container textAlign="center" style={{ paddingTop: "15px" }}>
-        <a href="https://www.freepik.com/vectors/background">
-          Background vector created by s.salvador - www.freepik.com
-        </a>
       </Container>
     </Segment>
   );

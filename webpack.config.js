@@ -96,7 +96,9 @@ module.exports = (env, options) => {
       }),
     ],
     devServer: {
-      port: 4200,
+      host: "localhost",
+      https: true,
+      port: 5000,
     },
   };
 };

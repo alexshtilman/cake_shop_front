@@ -13,7 +13,7 @@ import {
 } from "semantic-ui-react";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
-
+import { GOOGLE_CLIENT_ID } from "../config/config";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -63,7 +63,7 @@ const LoginForm = (props) => {
               <Grid.Row>
                 <Grid.Column width={16}>
                   <GoogleLogin
-                    clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                    clientId={GOOGLE_CLIENT_ID}
                     render={(renderProps) => (
                       <Button
                         onClick={renderProps.onClick}

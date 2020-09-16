@@ -24,9 +24,7 @@ function NavigationMenu(props) {
   const { t } = useTranslation();
   const pages = [
     { name: t("shop"), link: "/shop" },
-    { name: t("blog"), link: "/blog" },
-    { name: t("orders"), link: "/orders" },
-    { name: t("calendar"), link: "/calendar" },
+    { name: t("admin"), link: "/admin", admin: true },
   ];
 
   const handleItemClick = (e, { name }) => {
@@ -47,9 +45,10 @@ function NavigationMenu(props) {
   return (
     <React.Fragment>
       <br />
+
       <Grid padded className="tablet computer only">
         <Container>
-          <Menu secondary inverted size="huge">
+          <Menu secondary pointing secondary size="huge">
             <Link to="/">
               <Menu.Item
                 as="a"
@@ -69,7 +68,9 @@ function NavigationMenu(props) {
                         as="a"
                         name={page.name}
                         onClick={handleItemClick}
+                        color={page.admin ? "red" : "black"}
                       >
+                        {page.admin ? <Icon name="key" /> : null}
                         {page.name}
                       </Menu.Item>
                     </Link>
@@ -163,6 +164,7 @@ function NavigationMenu(props) {
                   as="a"
                   name={page.name}
                   onClick={handleItemClick}
+                  color={page.admin ? "red" : "black"}
                 >
                   {page.name}
                 </Menu.Item>

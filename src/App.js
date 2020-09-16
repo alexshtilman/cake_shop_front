@@ -22,8 +22,7 @@ import CheckoutFrom from "./components/CheckoutFrom";
 import Orders from "./components/Orders";
 import RegisterForm from "./components/RegisterForm";
 import RestoreForm from "./components/RestoreForm";
-import Shop from "./components/Shop";
-import history from "./helpers/history";
+import Shop from "./components/shop/Shop";
 
 import { actionUserData } from "./store/actions";
 import AuthJwtService from "./services/AuthJwtService";
@@ -43,7 +42,7 @@ const App = () => {
   // document.body.dir = i18n.dir();
   return loading ? null : (
     <React.Fragment>
-      <Router history={history}>
+      <Router>
         <Container className="nav">
           <NavigationMenu userData={userData} />
         </Container>
@@ -127,7 +126,7 @@ const App = () => {
             path={"/shop"}
             exact
             render={() => {
-              return userData.user_id ? <Shop /> : <Redirect to="/login" />;
+              return <Shop />;
             }}
           />
           <Route
