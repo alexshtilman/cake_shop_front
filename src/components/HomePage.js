@@ -106,7 +106,7 @@ export default function HomePage() {
                       </Grid.Column>
                       <Grid.Column>
                         <Image
-                          src={"public/static/images/" + item.img}
+                          src={"/static/images/" + item.img}
                           size="large"
                           centered
                           circular
@@ -133,7 +133,7 @@ export default function HomePage() {
           <Grid centered columns={5} style={{ marginTop: "1em" }}>
             <Grid.Column>
               <Card raised as="a">
-                <Image src="public/static/images/2018-08-15_09-30-50_UTC.jpg" />
+                <Image src="/static/images/2018-08-15_09-30-50_UTC.jpg" />
                 <Card.Content>
                   <Card.Header textAlign="center">Wedding</Card.Header>
                 </Card.Content>
@@ -141,7 +141,7 @@ export default function HomePage() {
             </Grid.Column>
             <Grid.Column>
               <Card raised as="a">
-                <Image src="public/static/images/2018-06-07_10-05-27_UTC_1.jpg" />
+                <Image src="/static/images/2018-06-07_10-05-27_UTC_1.jpg" />
                 <Card.Content>
                   <Card.Header textAlign="center">Party</Card.Header>
                 </Card.Content>
@@ -149,7 +149,7 @@ export default function HomePage() {
             </Grid.Column>
             <Grid.Column>
               <Card raised as="a">
-                <Image src="public/static/images/2018-07-07_11-20-09_UTC.jpg" />
+                <Image src="/static/images/2018-07-07_11-20-09_UTC.jpg" />
                 <Card.Content>
                   <Card.Header textAlign="center">Desert</Card.Header>
                 </Card.Content>
@@ -157,7 +157,7 @@ export default function HomePage() {
             </Grid.Column>
             <Grid.Column>
               <Card raised as="a">
-                <Image src="public/static/images/2018-07-27_08-50-00_UTC.jpg" />
+                <Image src="/static/images/2018-07-27_08-50-00_UTC.jpg" />
                 <Card.Content>
                   {" "}
                   <Card.Header textAlign="center">Cupcakes</Card.Header>{" "}
@@ -166,7 +166,7 @@ export default function HomePage() {
             </Grid.Column>
             <Grid.Column>
               <Card raised as="a">
-                <Image src="public/static/images/2019-07-21_05-47-37_UTC.jpg" />
+                <Image src="/static/images/2019-07-21_05-47-37_UTC.jpg" />
                 <Card.Content>
                   {" "}
                   <Card.Header textAlign="center">Sweets</Card.Header>
@@ -186,7 +186,7 @@ export default function HomePage() {
             {blogData.map((item, index) => {
               return (
                 <Item key={item.id}>
-                  <Item.Image src={"public/static/images/" + item.img} />
+                  <Item.Image src={"/static/images/" + item.img} />
                   <Item.Content>
                     <Item.Header as="a">{item.headerEn}</Item.Header>
                     <Item.Meta>

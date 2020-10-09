@@ -59,23 +59,23 @@ function NavigationMenu(props) {
                 Lupin.co.il
               </Menu.Item>
             </Link>
-            {userData.user_id == ""
+            {userData.unique_id != ""
               ? pages.map((page, index) => {
-                  return (
-                    <Link to={page.link} key={`index-${index}`}>
-                      <Menu.Item
-                        active={activeItem === page.name}
-                        as="a"
-                        name={page.name}
-                        onClick={handleItemClick}
-                        color={page.admin ? "red" : "black"}
-                      >
-                        {page.admin ? <Icon name="key" /> : null}
-                        {page.name}
-                      </Menu.Item>
-                    </Link>
-                  );
-                })
+                return (
+                  <Link to={page.link} key={`index-${index}`}>
+                    <Menu.Item
+                      active={activeItem === page.name}
+                      as="a"
+                      name={page.name}
+                      onClick={handleItemClick}
+                      color={page.admin ? "red" : "black"}
+                    >
+                      {page.admin ? <Icon name="key" /> : null}
+                      {page.name}
+                    </Menu.Item>
+                  </Link>
+                );
+              })
               : null}
             <Menu.Menu position="right">
               <Link to="/cart">
@@ -96,8 +96,8 @@ function NavigationMenu(props) {
                         activeLang === "en"
                           ? "us"
                           : activeLang === "he"
-                          ? "il"
-                          : "ru"
+                            ? "il"
+                            : "ru"
                       }
                     />{" "}
                     {activeLang}{" "}

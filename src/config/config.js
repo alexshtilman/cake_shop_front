@@ -1,13 +1,11 @@
 export const ACCESS_TOKEN = "cake_shop";
-export const GOOGLE_CLIENT_ID =
-  "217085309416-a0bb15df543cd6om21vfclcvinm3m226.apps.googleusercontent.com";
-export const FACEBOOK_APP_ID = "";
+export const REFRESH_TOKEN = "cake_shop_refresh";
 export const INIT_STATE = {
-  user_id: "",
-  lastname: "",
-  firstname: "",
-  position: "",
-  role_id: "",
-  username: "",
-  auth_token: "",
+  unique_id: '',
+  is_admin: false,
+  users_name: '',
+  users_email: '',
+  profile_pic: '',
+  auth_token: '',
+  refresh_token: ''
 };

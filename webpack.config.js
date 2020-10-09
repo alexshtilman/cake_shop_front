@@ -11,7 +11,7 @@ const outputObj = (mode) => {
     path:
       mode == "development"
         ? path.resolve(__dirname, "distr")
-        : path.resolve(__dirname, "../cake_shop_backend_flask_rest/static"),
+        : path.resolve(__dirname, "../cake_shop_backend_flask_rest/static/assets/"),
     filename:
       mode == "development" ? "[name].[hash].js" : "[name].[chunkhash].js",
   };
@@ -23,7 +23,7 @@ const templateObj = (mode) => {
     minify: { collapseWhitespace: true },
     favicon: "./images/favicon.png",
   };
-  if (mode == "production") obj["filename"] = "../templates/index.html";
+  if (mode == "production") obj["filename"] = "../../templates/index.html";
   return obj;
 };
 module.exports = (env, options) => {
