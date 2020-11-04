@@ -1,11 +1,11 @@
-FROM node:alpine3.11 AS builder
+FROM node:15.0.1-stretch AS builder
 WORKDIR /app
-COPY . .
-RUN npm install react-scripts -g --silent
-RUN yarn install
+ADD package*.json ./
+RUN yarn add react-scripts
 RUN yarn run build
+COPY . .
 
-FROM node:alpine3.11
+FROM node:15.0.1-stretch
 RUN yarn global add serve
 WORKDIR /app
 COPY --from=builder /app/build .
